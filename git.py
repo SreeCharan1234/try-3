@@ -1,28 +1,21 @@
 import os
 import random
 
-# Get number of commits from the user
-try:
-    NUM_COMMITS = int(input("Enter the number of commits to create: "))
-except ValueError:
-    print("Please enter a valid integer for the number of commits.")
-    exit(1)
 
-# Get the year from the user
 try:
-    year = int(input("Enter the year for the commits (e.g., 2024): "))
+    year = 2025
 except ValueError:
     print("Please enter a valid year.")
     exit(1)
 
-# Create a file for dummy commits
-file_path = 'test.txt'
-with open(file_path, 'a') as file:
-    file.write('Initial commit\n')
-os.system('git add test.txt')
-os.system('git commit -m "Initial commit"')
+# # Create a file for dummy commits
+# file_path = 'test.txt'
+# with open(file_path, 'a') as file:
+#     file.write('Initial commit\n')
+# os.system('git add test.txt')
+# os.system('git commit -m "Initial commit"')
 
-for i in range(NUM_COMMITS):
+for i in range(1,10):
     # Generate random month and day offset
     month = random.randint(1, 12)
     day_offset = i % 28 + 1  # Ensures the day is between 1 and 28 to avoid invalid dates
